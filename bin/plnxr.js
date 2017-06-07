@@ -4,8 +4,19 @@ var yargs = require('yargs');
 var commands = require('../lib/index');
 
 var argv=yargs.usage('$0 <cmd> [args]')
-    .command('list [args]', 'list your balances',function(yargs){
+    .command('balance [args]', 'list your balances',function(yargs){
         return yargs;
+    },function(argv){
+        commands.balanceCommand(argv);
+    })
+    .command('list [args]', 'list markets',function(yargs){
+        return yargs.option('market',{
+            alias: 'm',
+            demandOption: false,
+            default: 'BTC',
+            describe: 'the market to list (BTC, ETH, XMR, USDT)',
+            type: 'string'
+        })
     },function(argv){
         commands.listCommand(argv);
     })

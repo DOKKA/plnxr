@@ -12,12 +12,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "homepage": "https://github.com/DOKKA/plnxr",
   "keywords": [
     "bitcoin",
     "poloniex",
     "trading"
   ],
-  "author": "dokka",
+  "author": {
+    "name": "dokka",
+    "email": "scuffmark@gmail.com",
+    "url": "http://github.com/dokka/"
+  },
+    "repository": {
+    "type": "git",
+    "url": "git://github.com/DOKKA/plnxr.git"
+  },
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.0",
