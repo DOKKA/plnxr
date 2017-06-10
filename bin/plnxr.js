@@ -9,34 +9,20 @@ var argv=yargs.usage('$0 <cmd> [args]')
     aliases: ['bal'],
     desc: 'list your balances',
     builder: (yargs) => yargs,
-    handler: (argv) => commands.balanceCommand(argv)
+    handler: commands.balanceCommand
 })
 .command({
     command: 'list [market] [args]',
     aliases: ['ls'],
     desc: 'list markets',
     builder: (yargs) => yargs.default('market','BTC'),
-    handler: (argv) => commands.listCommand(argv)
+    handler: commands.listCommand
 })
-/*
-    .command('list [args]', 'list markets',function(yargs){
-        return yargs.option('market',{
-            alias: 'm',
-            demandOption: false,
-            default: 'BTC',
-            describe: 'the market to list (BTC, ETH, XMR, USDT)',
-            type: 'string'
-        })
-    },function(argv){
-        commands.listCommand(argv);
-    })*/
-    .command('buy [args]', 'buy some coins',function(yargs){
-        return yargs.option('currencyPair',{
-            alias: 'c',
-            demandOption: true,
-            describe: 'the currency pair to trade on',
-            type: 'string'
-        }).option('baseBuyPercentage',{
+.command({
+    command: 'buy <currencyPair> [args]',
+    desc: 'buy some coins',
+    builder: (yargs) => {
+        return yargs.option('baseBuyPercentage',{
             alias: 'p',
             demandOption: true,
             describe: 'the percentage of your base currency to use for purchasing',
@@ -48,16 +34,14 @@ var argv=yargs.usage('$0 <cmd> [args]')
             type: 'number'
         });
     
-    },function(argv){
-        commands.buyCommand(argv);
-    })
-    .command('sell [args]', 'sell some coins',function(yargs){
-        return yargs.option('currencyPair',{
-            alias: 'c',
-            demandOption: true,
-            describe: 'the currency pair to trade on',
-            type: 'string'
-        }).option('baseSellPercentage',{
+    },
+    handler: commands.buyCommand
+})
+.command({
+    command: 'sell <currencyPair> [args]',
+    desc: 'sell some coins',
+    builder: (yargs) => {
+        return yargs.option('baseSellPercentage',{
             alias: 'p',
             demandOption: false,
             describe: 'the percentage of your trade currency to use for selling',
@@ -73,9 +57,8 @@ var argv=yargs.usage('$0 <cmd> [args]')
             describe: 'sell at a slightly lower price to ensure the order fills',
             type: 'boolean'
         });
-    
-    },function(argv){
-        commands.sellCommand(argv);
-    })
-    .version()
-    .help().argv;
+    },
+    handler: commands.sellCommand
+})
+.version()
+.help().argv;
