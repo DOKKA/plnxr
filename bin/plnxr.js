@@ -4,11 +4,21 @@ var yargs = require('yargs');
 var commands = require('../lib/index');
 
 var argv=yargs.usage('$0 <cmd> [args]')
-    .command('balance [args]', 'list your balances',function(yargs){
-        return yargs;
-    },function(argv){
-        commands.balanceCommand(argv);
-    })
+.command({
+    command: 'balance [args]',
+    aliases: ['bal'],
+    desc: 'list your balances',
+    builder: (yargs) => yargs,
+    handler: (argv) => commands.balanceCommand(argv)
+})
+.command({
+    command: 'list [market] [args]',
+    aliases: ['ls'],
+    desc: 'list markets',
+    builder: (yargs) => yargs.default('market','BTC'),
+    handler: (argv) => commands.listCommand(argv)
+})
+/*
     .command('list [args]', 'list markets',function(yargs){
         return yargs.option('market',{
             alias: 'm',
@@ -19,7 +29,7 @@ var argv=yargs.usage('$0 <cmd> [args]')
         })
     },function(argv){
         commands.listCommand(argv);
-    })
+    })*/
     .command('buy [args]', 'buy some coins',function(yargs){
         return yargs.option('currencyPair',{
             alias: 'c',
@@ -67,4 +77,5 @@ var argv=yargs.usage('$0 <cmd> [args]')
     },function(argv){
         commands.sellCommand(argv);
     })
+    .version()
     .help().argv;
