@@ -60,5 +60,12 @@ var argv=yargs.usage('$0 <cmd> [args]')
     },
     handler: commands.sellCommand
 })
+.command({
+    command: 'orders [currencyPair]',
+    aliases: ['ord'],
+    desc: 'list open orders',
+    builder: (yargs) => yargs,
+    handler: commands.ordersCommand
+})
 .version()
 .help().argv;
