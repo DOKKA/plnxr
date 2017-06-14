@@ -22,39 +22,31 @@ export API_KEY=your-api-key
 export API_SECRET=myreallylongsecret
 ```
 
-### Startup
-
-```plnxr --help```
-
-## What is it?
-
-plnxr is a simple interface in command line for trading on poloniex marketplace. 
-
 ## Commands
 #### plnxr balance [args]
-lists your balances
-alias: bal
+lists your balances  
+alias: bal  
 example: ```plnxr bal```
 
 #### plnxr list [currency] [args]
-lists all markets for a currency
-alias: ls
-example: ```plnxr ls``` (defaults to BTC)
+lists all markets for a currency  
+alias: ls  
+example: ```plnxr ls``` (defaults to BTC)  
 list usdt markets: ```plnxr ls USDT```
 
 #### plnxr buy <currencyPair> [args]
-buy some coins
-example ```plnxr buy BTC_ETH -p 10``` use 10% of your bitcoin reserves to buy ethereum
+buy some coins  
+example ```plnxr buy BTC_ETH -p 10``` use 10% of your bitcoin reserves to buy ethereum  
 be careful with this command. if you forget the -p argument it will buy 100% of the currency you select
 
 #### plnxr sell <currencyPair> [args]
-sell some coins
-example ```plnxr sell BTC_ETH -p 10``` sell 10% of your etherium back to bitcoin at highest bid
+sell some coins  
+example ```plnxr sell BTC_ETH -p 10``` sell 10% of your etherium back to bitcoin at highest bid  
 example ```plnxr sell BTC_ETH -p 10 -l 20``` sell 10% of your etherium back to bitcoin at 20% higher than highest bid
 
 #### plnxr orders [args] 
-list open orders
-alias: ord
+list open orders  
+alias: ord  
 example ```plnxr ord```
 
 #### plnxr --help
