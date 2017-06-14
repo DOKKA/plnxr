@@ -15,7 +15,28 @@ var argv=yargs.usage('$0 <cmd> [args]')
     command: 'list [market] [args]',
     aliases: ['ls'],
     desc: 'list markets',
-    builder: (yargs) => yargs.default('market','BTC'),
+    builder: (yargs) => yargs.default('market','BTC')
+        .option('volume',{
+            alias: 'v',
+            demandOption: false,
+            describe: 'order by volume',
+            type: 'boolean'
+        }).option('currencyPair',{
+            alias: 'c',
+            demandOption: false,
+            describe: 'order by coin',
+            type: 'boolean'
+        }).option('rate',{
+            alias: 'r',
+            demandOption: false,
+            describe: 'order by rate',
+            type: 'boolean'
+        }).option('percentChange',{
+            alias: 'p',
+            demandOption: false,
+            describe: 'order by percent change',
+            type: 'boolean'
+        }),
     handler: commands.listCommand
 })
 .command({
