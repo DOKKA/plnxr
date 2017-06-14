@@ -66,5 +66,5 @@ Please read through the code and decide for yourself if you should use it! I'm s
 MIT
 
 ### Donate?
-If you like this program, feel free to donate some ethereum!
+If you like this program, feel free to donate some ethereum!  
 ```0x9C291207Af058dAb43328F87130B52f11Be9A369```
