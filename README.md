@@ -57,7 +57,7 @@ This is a dangerous command! I am not responsible for the trades this program ma
 Please read through the code and decide for yourself if you should use it! I'm still working on the commands and I want to make this program really nice. 
 
 ## Features
-+ plnxr accepts percentages for buying and selling and sell limits. This way, you don't have to type in an exact percentage for anything.
++ plnxr accepts percentages for buying and selling and sell limits. This way, you don't have to type in an exact decimal value for anything.
 + the rates that plnxr uses for the calculations are refreshed on every command. If you make a buy, it uses the lowest ask price in that instant of time.
 + the list, balance, and order commands display in nice colored formatted tables with several sorting options
 + This command saves alot of time. If you add your api keys to the environmental variables, you will rarely have to login to poloniex.
