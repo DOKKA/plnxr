@@ -45,13 +45,23 @@ var argv=yargs.usage('$0 <cmd> [args]')
     builder: (yargs) => {
         return yargs.option('baseBuyPercentage',{
             alias: 'p',
-            demandOption: true,
+            demandOption: false,
             describe: 'the percentage of your base currency to use for purchasing',
             type: 'number'
-        }).option('sellLimitPercentage',{
-            alias: 'l',
+        }).option('total',{
+            alias: 't',
             demandOption: false,
-            describe: 'the percentage higher you want to sell the currency for',
+            describe: 'total ammount in base currency to purchase',
+            type: 'number'
+        }).option('amount', {
+            alias: 'a',
+            demandOption: false,
+            describe: 'amount in trade currency to purchase',
+            type: 'number'
+        }).option('rate', {
+            alias: 'r',
+            demandOption: false,
+            describe: 'the price to buy the trade currency at',
             type: 'number'
         });
     
