@@ -63,6 +63,16 @@ var argv=yargs.usage('$0 <cmd> [args]')
             demandOption: false,
             describe: 'the price to buy the trade currency at',
             type: 'number'
+        }).option('buyLimitPercentage',{
+            alias: 'l',
+            demandOption: false,
+            describe: 'the percentage lower you want to buy the currency for',
+            type: 'number'
+        }).option('dryRun',{
+            alias: 'd',
+            demandOption: false,
+            describe: 'run the command, but do not actually sell',
+            type: 'boolean'
         });
     
     },
