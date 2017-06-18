@@ -77,6 +77,21 @@ var argv=yargs.usage('$0 <cmd> [args]')
             demandOption: false,
             describe: 'the percentage of your trade currency to use for selling',
             type: 'number'
+        }).option('total',{
+            alias: 't',
+            demandOption: false,
+            describe: 'total ammount in base currency to sell',
+            type: 'number'
+        }).option('amount', {
+            alias: 'a',
+            demandOption: false,
+            describe: 'amount in trade currency to sell',
+            type: 'number'
+        }).option('rate', {
+            alias: 'r',
+            demandOption: false,
+            describe: 'the price to sell the trade currency at',
+            type: 'number'
         }).option('sellLimitPercentage',{
             alias: 'l',
             demandOption: false,
@@ -86,6 +101,11 @@ var argv=yargs.usage('$0 <cmd> [args]')
             alias: 'panic',
             demandOption: false,
             describe: 'sell at a slightly lower price to ensure the order fills',
+            type: 'boolean'
+        }).option('dryRun',{
+            alias: 'd',
+            demandOption: false,
+            describe: 'run the command, but do not actually sell',
             type: 'boolean'
         });
     },
