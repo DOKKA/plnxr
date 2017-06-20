@@ -128,5 +128,12 @@ var argv=yargs.usage('$0 <cmd> [args]')
     builder: (yargs) => yargs,
     handler: commands.ordersCommand
 })
+.command({
+    command: 'cancel <orderNumber>',
+    aliases: ['rm'],
+    desc: 'cancel open orders',
+    builder: (yargs) => yargs,
+    handler: commands.cancelCommand
+})
 .version()
 .help().argv;
