@@ -71,7 +71,7 @@ var argv=yargs.usage('$0 <cmd> [args]')
         }).option('dryRun',{
             alias: 'd',
             demandOption: false,
-            describe: 'run the command, but do not actually sell',
+            describe: 'run the command, but do not actually buy',
             type: 'boolean'
         });
     
