@@ -1,6 +1,6 @@
 {
   "name": "plnxr",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "a command line app for buying and selling coins on poloniex",
   "main": "./lib/index.js",
   "bin": {
